@@ -1,0 +1,229 @@
+@import "./config";
+
+.priceChangeSuccess {
+	color: rgb(19, 247, 152) !important;
+}
+
+.priceChangeFailure {
+	color: rgb(248, 6, 66) !important;
+}
+
+// ================== Home Section ==================
+.homeSection {
+	min-height: 100vh;
+	display: flex;
+	flex-direction: column;
+	justify-content: space-between;
+	align-items: center;
+}
+
+.homeInnerSection {
+	width: 100%;
+}
+
+// ================== Search Bar ==================
+.searchBarWrap {
+	display: flex;
+	justify-content: center;
+	margin-bottom: 4rem;
+
+	.searchBar {
+		padding: 0.5rem 0 0.5rem 0.5rem;
+		font-size: $link-size;
+		border: 1px solid #ccc;
+		outline: none;
+	}
+}
+
+// ================== Coin List ==================
+.coinList {
+	width: 95%;
+	margin: 0 auto 4rem auto;
+
+	.coinTable {
+		width: 100%;
+		border-collapse: collapse;
+	}
+
+	.coinTr {
+		min-height: 50px;
+		display: flex;
+		justify-content: space-between;
+		align-items: center;
+		border-bottom: 1px solid rgba(204, 204, 204, 0.5);
+		cursor: pointer;
+
+		.coinTh {
+			text-align: left;
+			text-transform: capitalize;
+		}
+
+		.coinDesc {
+			flex: 1;
+			font-size: $h4-size;
+			font-weight: $font-lite;
+			color: $dark-col;
+		}
+
+		.coinThName {
+			flex: 2;
+		}
+
+		.coinNameWrap {
+			flex: 2;
+			display: flex;
+			align-items: center;
+
+			.coinImg {
+				width: 25px;
+				height: 25px;
+				margin-right: 2rem;
+			}
+		}
+	}
+
+	.coinHeadersTr {
+		pointer-events: none;
+	}
+}
+
+// ================== Single Coin ==================
+.singleCoinSection {
+	margin-top: 25vh;
+	display: flex;
+	justify-content: center;
+
+	.singleCoinCard {
+		width: 600px;
+		margin: 0 auto;
+		padding: 2rem 0;
+		background-color: #f4f4f4;
+		border-radius: 10px;
+		box-shadow: 0px 0px 10px 2px rgba(0, 0, 0, 0.75);
+	}
+
+	.singleCoinCardInnerWrap {
+		width: 95%;
+		margin: 0 auto;
+	}
+
+	// Header
+	.singleCoinCardHeader {
+		margin-bottom: 2rem;
+		text-align: center;
+
+		.singleCoinCardImg {
+			width: 100px;
+		}
+	}
+
+	.singleCoinCardText {
+		margin-bottom: 3rem;
+	}
+
+	// Text
+	.singleCoinCardItem {
+		display: flex;
+		margin-bottom: 1rem;
+
+		&:last-child {
+			margin-bottom: 0;
+		}
+
+		.singleCoinCardItemInfo {
+			font-weight: 600 !important;
+		}
+
+		.singleCoinCardItemDesc {
+			flex: 1;
+			font-size: $h3-size;
+			font-weight: 400;
+			text-transform: capitalize;
+			color: $dark-col;
+		}
+	}
+
+	// Home Btn
+	.singleCoinCardHomeBtnWrap {
+		text-align: center;
+		margin-bottom: 1rem;
+
+		.singleCoinCardHomeBtn {
+			padding: 1rem 2rem;
+			font-size: $link-size;
+			text-transform: capitalize;
+			border-radius: 5px;
+			color: $light-col;
+			background-color: rgb(16, 105, 221);
+		}
+	}
+}
+
+// ================== Footer ==================
+.footer {
+	text-align: center;
+
+	.footerText {
+		font-size: $p-size + 0.25rem;
+		color: $dark-col;
+	}
+}
+
+// ================== Media Queries ==================
+@media screen and (max-width: 1300px) {
+	// ================== Coin List ==================
+	.coinThMarketCap {
+		display: none;
+	}
+
+	.coinMarketCap {
+		display: none;
+	}
+}
+
+@media screen and (max-width: 768px) {
+	// ================== Coin List ==================
+	.coinThID {
+		display: none;
+	}
+
+	.coinID {
+		display: none;
+	}
+
+	// ================== Single Coin ==================
+	.singleCoinSection .singleCoinCard {
+		width: 95%;
+	}
+}
+
+@media screen and (max-width: 494px) {
+	// ================== Coin List ==================
+	.coinThChange {
+		display: none;
+	}
+
+	.coinChange {
+		display: none;
+	}
+
+	// ================== Single Coin ==================
+	.singleCoinSection {
+		margin-top: 15vh;
+	}
+
+	.singleCoinSection .singleCoinCardText {
+		display: flex;
+		flex-direction: column;
+		align-items: center;
+	}
+
+	.singleCoinSection .singleCoinCardItem {
+		flex-direction: column;
+		text-align: center;
+	}
+
+	.singleCoinSection .singleCoinCardItemDesc {
+		margin-bottom: 0.5rem;
+	}
+}
