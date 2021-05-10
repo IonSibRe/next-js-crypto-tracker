@@ -1,7 +1,8 @@
+import { useEffect, useState } from "react";
+import Layout from "../components/Layout";
 import Header from "../components/Header";
 import CoinList from "../components/CoinList";
 import styles from "../styles/Home.module.scss";
-import { useEffect, useState } from "react";
 
 const Home = ({ data }) => {
 	const [coinSearched, setCoinSearched] = useState("");
@@ -17,26 +18,28 @@ const Home = ({ data }) => {
 	}, [coinSearched]);
 
 	return (
-		<section className={styles.homeSection}>
-			<section className={styles.homeInnerSection}>
-				<Header />
-				<div className={styles.searchBarWrap}>
-					<input
-						type="text"
-						className={styles.searchBar}
-						placeholder="Bitcoin, Ethereum, ..."
-						onChange={(e) => setCoinSearched(e.target.value)}
-					/>
-				</div>
-				<CoinList data={filteredData} />
+		<Layout title="Crypto Tracker">
+			<section className={styles.homeSection}>
+				<section className={styles.homeInnerSection}>
+					<Header />
+					<div className={styles.searchBarWrap}>
+						<input
+							type="text"
+							className={styles.searchBar}
+							placeholder="Bitcoin, Ethereum, ..."
+							onChange={(e) => setCoinSearched(e.target.value)}
+						/>
+					</div>
+					<CoinList data={filteredData} />
+				</section>
+				<footer className={styles.footer}>
+					<p className={styles.footerText}>
+						Copyright &copy; {date.getFullYear()} Crypto Tracker.
+						All rights reserved.
+					</p>
+				</footer>
 			</section>
-			<footer className={styles.footer}>
-				<p className={styles.footerText}>
-					Copyright &copy; {date.getFullYear()} Crypto Tracker. All
-					rights reserved.
-				</p>
-			</footer>
-		</section>
+		</Layout>
 	);
 };
 

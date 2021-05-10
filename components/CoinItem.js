@@ -33,7 +33,7 @@ const CoinItem = ({ item }) => {
 					</h4>
 				</td>
 				<td className={`${styles.coinDesc} ${styles.coinPrice}`}>
-					${floatPrice.toFixed(2)}
+					${floatPrice.toFixed(4)}
 				</td>
 				<td
 					className={`${styles.coinDesc} ${styles.coinChange} ${
